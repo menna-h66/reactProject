@@ -1,0 +1,519 @@
+*{
+  padding: 0px ;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container{
+  width: 80% !important;
+  margin: auto ;
+}
+
+#navbar{
+  padding: 20px 10% 20px !important;
+  z-index: 999;
+  width: 100% !important;
+  position: fixed !important;
+  top: 0% !important;
+  transition: 0.5s ease-in-out;
+}
+#navbar.scrolled{
+  background-color: rgb(0, 0, 0) !important;
+  padding: 5px 10% !important;
+}
+.nav_brand ,.copyRights h1{
+  font-size: 40px !important;
+  font-weight: 700;
+  color: #fff !important;
+}
+.navLink{
+  font-size: 20px !important;
+  margin: 0px 24px !important;
+  font-weight: 500 !important;
+}
+.navForm{
+  display: flex !important;
+  align-items: center !important;
+}
+.nav_icon{
+  font-size: 20px;
+  border: 2px solid #fff;
+  padding: 5px 11px 10px;
+  border-radius: 50%;
+  margin-left: 10px !important;
+  color: #fff !important;
+}
+.nav_icon:hover{
+  background-color: #fff;
+  color: #000 !important;
+  transition: 0.5s ease-in-out;
+}
+.nav_btn{
+  padding: 15px 30px !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  border: 2px  solid #fff!important;
+  margin-left: 24px !important;
+  background-color: inherit !important;
+  position: relative  !important;
+  color: #fff !important;
+}
+.nav_btn::after{
+  content: '';
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0%;
+  top: 0%;
+  color: #000 !important;
+  font-weight: 500 !important;
+  transition: 0.5s;
+  z-index: -1;
+}
+.nav_btn:hover::after {
+  width: 100% !important;
+}
+.nav_btn:hover {
+    color: #000 !important; 
+}
+@media (Max-width : 900px) {
+    .nav_btn{
+      font-size: 18px !important;
+      margin: 20px auto !important;
+      width: 100%;
+    }
+    .navForm{
+      display: block !important;
+      padding-top: 30px;
+      text-align: center;
+    }
+}
+
+/**********************************Banner******************************************/
+
+.Banner{
+  height: 100vh;
+  width: 100%;
+  background-image: url('./assets/banner-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding-top: 100px ;
+}
+.Banner .container{
+  margin-top: 100px ;
+  display: grid;
+  grid-template-columns: 55% 45%;
+}
+.Banner h4{
+  border: 1px solid #fff;
+  width: max-content;
+  padding: 12px;
+  background: linear-gradient(to right, rgba(151, 76, 140, 0.8), rgba(63, 9, 109, 0.8));
+
+}
+.Banner h1{
+  font-size: 50px;
+  font-weight: 700;
+}
+.Banner p{
+  color: #7d7d7d;
+ font-weight: 500;
+ margin-top: 20px;
+}
+.banner_img{
+  position: relative !important;
+  height: 100% !important;
+}
+.banner_img img{
+  height: 400px;
+  position: absolute;
+  animation-name: upToDown;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  top: 0;
+}
+@keyframes upToDown{
+  0%{
+    top: 0%;
+  }
+  50%{
+    top: 10%;
+  }
+  100%{
+    top: 0%;
+  }
+}
+.banner_info .Wrap{
+  border-right: 4px solid #7d7d7d;
+}
+.banner_info_link{
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+.banner_info_link .icon{
+  border: 2px solid #fff !important;
+  border-radius: 50%;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 5px !important;
+  margin: 40px 10px !important;
+}
+
+@media (Max-width : 900px) {
+  .Banner{
+    height: max-content !important;
+    padding: 40px 0px;
+  }
+  .Banner .container{
+    display: block;
+    width: 95% !important;
+  }
+  .Banner h1{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 50px;
+  }
+  .banner_info_P{
+    display: none;
+  }
+  .Banner p{
+   margin-top: 16px;
+  }
+  .banner_img img{
+    height: 250px;
+    position: relative;
+  }
+}
+
+/*****************************Skills*************************************/
+
+.skills{
+  background: linear-gradient(to right , rgb(102, 52, 94), rgb(46, 6, 80));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: max-content;
+}
+.skills .container{
+  text-align: center;
+  padding: 80px 0px !important; 
+  background-color: #000;
+  border-radius: 30px;
+  position: relative;
+  top: -50px;
+}
+.skills h1 , .myProject h1{
+  font-weight: 700;
+  color: #fff;
+}
+.skills p, .myProject p{
+  color: #7d7d7d;
+  font-weight: 600 ;
+  font-size: 18px;
+}
+.carousel{
+  height: 300px !important;
+  display: flex !important;
+  align-items: center;
+}
+.skills .Skill_progress{
+  height: 160px;
+  width: 160px;
+  margin: 0px auto 30px;
+  position: relative !important;
+}
+.skills .skills_h2{
+  position: absolute !important;
+  width: 100% ;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills svg{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-color: transparent !important;
+}
+.skills circle{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 16px;
+  stroke-dasharray: 390;
+}
+@media (Max-width : 900px){
+  .skills{
+    padding: 70px 0px;
+    height: max-content !important;
+  }
+  .skills .container{
+    height: max-content !important;
+    width: 95% !important;
+    top: 0px;
+  }
+  .carousel-item .row{
+  display: flex !important;
+  margin-top: 30px;
+  } 
+.carousel{margin-top: 200px;
+  }
+}
+
+/*******************************myProject**************************************/
+.myProject .container{
+  text-align: center;
+  padding: 40px 0px 20px!important; 
+  background-color: #000;
+}
+.myProject{
+  background-color: #000;
+  padding: 70px 0px 0px;
+}
+.myProject .linkGroup{
+  height: 80px !important;
+  width: 80% !important;
+  margin: 40px auto 0px!important;
+  border-radius: 140px !important;
+  border: 1px solid #7d7d7d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+}
+.myProject  .NavLink{
+  height: 100% !important;
+  width: 100% !important;
+  background-color: transparent;
+  font-size: 20px !important;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.myProject  .middle{
+  border-left: 1px solid #7d7d7d;
+  border-right: 1px solid #7d7d7d;
+}
+@media (Max-width : 900px){
+  .myProject .container{
+    width: 100% !important;
+  }
+  .myProject .linkGroup{
+    width: 95% !important;
+  }
+  .myProject  .NavLink{
+    font-size: 16px !important;
+  }
+}
+
+/***********************************************projectCards*****************************/
+
+.CardGroup .Card{
+  height: 250px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden !important;
+  margin-bottom: 25px !important;
+  border-radius: 20px !important;
+}
+.CardGroup .Card::after{
+  content: '';
+  top: 0%;
+  left: 0%;
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to right , rgba(102, 52, 94, 0.8), rgba(46, 6, 80, 0.8));
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s;
+}
+.CardGroup .Card:hover::after{
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+.CardGroup .card2{
+  margin: 0px 25px !important;
+}
+.CardGroup .Card .card_img{
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+.CardGroup .card_info{
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding-top: 22%;
+  top: 100%;
+  z-index: 33;
+  transition: 1s;
+  visibility: hidden !important;
+}
+.CardGroup .Card:hover .card_info{
+  top: 0%;
+  visibility: visible !important;
+}
+
+@media (Max-width : 900px){
+    
+  .CardGroup .card2{
+    margin: 0px 0 !important;
+  }
+  .CardGroup .Card{
+    margin: 0px 25px 25px !important;
+  }
+}
+
+/*****************************getInTouch********************************/
+
+.getInTouch{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background: linear-gradient(to right , rgb(150, 69, 136), rgb(65, 6, 116));
+  padding: 50px 120px 300px;
+  color: #fff;
+}
+.getInTouch .getInTouch_img{
+  width: 100%;
+  height: 450px;
+}
+.getInTouch .getInTouch_img img{
+  margin-top: 50px;
+  height: 85%;
+  width: 100%;
+}
+.Form  .Form_Control{
+  background-color: rgba(133, 89, 125, 0.5);
+  color: #fff !important;
+  padding: 20px 30px;
+  border-radius: 20px;
+  margin-bottom: 10px !important;
+}
+.Form  .Form_Control::placeholder{
+  color: #fff !important;
+}
+.Form  .Form_Control:focus{
+  background-color: #fff;
+  color: #000 !important;
+}
+.Form  .Form_Control:focus::placeholder{
+  color: #000 !important;
+}
+.Form .textarea{
+  height: 200px !important;
+}
+.Form button{
+  margin-top: 20px;
+  width: 160px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 0%;
+}
+@media (Max-width : 900px){
+  .getInTouch{
+    display: block;
+    padding: 5px ;
+  } 
+}
+
+/*****************************footer*******************************/
+footer{
+  background-color: #000;
+  padding-bottom: 30px;
+}
+footer .container{
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  padding: 100px;
+  position: relative;
+  top: -150px;
+  border-radius: 60px;
+}
+footer .container h1{
+  font-weight: 600;
+  margin-right: 40px;
+}
+footer .Form_Group{
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+footer .Form_Group button{
+  background: linear-gradient(to right , rgb(150, 69, 136), rgb(65, 6, 116));
+  position: absolute;
+  z-index: 222;
+  right: 1%;
+  height: 90%;
+  width: 40%;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+footer .Form_Group button:hover{
+  color: #fff;
+}
+footer .form_control{
+  position: absolute;
+  height: 100%;
+  border-radius: 30px;
+  padding-left:  20px;
+  border: 2px solid rgb(150, 69, 136);
+}
+footer .form{
+  text-align: end;
+}
+.copyRights{
+  width: 80%;
+  color: #fff;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (Max-width : 900px){
+  
+  footer .container{
+    width: 95% !important;
+    display: block;
+    padding: 30px;
+    top: 20px;
+    margin-bottom: 50px;
+  }
+  .copyRights{
+    display: block !important;
+  }
+  footer .form{
+    text-align: center;
+    margin-top: 50px;
+  }
+}
